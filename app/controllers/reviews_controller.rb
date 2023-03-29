@@ -44,7 +44,7 @@ class ReviewsController < ApplicationController
       @review = Review.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+    # Only allow a list of trusted parameters through in order to create a review.
     def review_params
       params.require(:review).permit(:user_id, :hotel_id, :restaurant_id, :comment)
     end
