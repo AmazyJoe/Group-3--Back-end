@@ -41,12 +41,29 @@ Restaurant.create(name: "De Kuku Grill", location: "Kisii", description: "Dealer
 Restaurant.create(name: "Sushi Suyu", location: "Migori", description: "Amazing sushi choices", price_range: 700, image_url: "https://static.wixstatic.com/media/cb9e90_227cf774c9614ec1a46b707eba3af6e8~mv2.jpg/v1/fill/w_640,h_480,fp_0.50_0.50,q_80,usm_0.66_1.00_0.01,enc_auto/cb9e90_227cf774c9614ec1a46b707eba3af6e8~mv2.jpg", rating: 3)
 
 # Create some users
-User.create(user_name: "johndoe", email: "johndoe@example.com", password_digest: "password")
-User.create(user_name: "johndoe", email: "johndoe@example.com", password_digest: "password")
-User.create(user_name: "johndoe", email: "johndoe@example.com", password_digest: "password")
-User.create(user_name: "johndoe", email: "johndoe@example.com", password_digest: "password")
-User.create(user_name: "johndoe", email: "johndoe@example.com", password_digest: "password")
-User.create(user_name: "johndoe", email: "johndoe@example.com", password_digest: "password")
-User.create(user_name: "johndoe", email: "johndoe@example.com", password_digest: "password")
-User.create(user_name: "johndoe", email: "johndoe@example.com", password_digest: "password")
+User.create(user_name: "ochieng", email: "ochieng@example.com", password_digest: "password")
+User.create(user_name: "javan", email: "javan@example.com", password_digest: "password")
+User.create(user_name: "mugambi", email: "mugambi@example.com", password_digest: "password")
+User.create(user_name: "angeline", email: "angeline@example.com", password_digest: "password")
+User.create(user_name: "simiyu", email: "simiyu@example.com", password_digest: "password")
+User.create(user_name: "daniel", email: "daniel@example.com", password_digest: "password")
+User.create(user_name: "gitau", email: "gitau@example.com", password_digest: "password")
+User.create(user_name: "joseph", email: "joseph@example.com", password_digest: "password")
+
+#create some reviews
+
+# get all the hotels
+hotels = Hotel.all
+
+# create 20 random reviews for each hotel
+hotels.each do |hotel|
+  20.times do
+    Review.create(
+      title: Faker::Lorem.sentence(word_count: 3),
+      content: Faker::Lorem.paragraph(sentence_count: 3),
+      rating: rand(1..5),
+      hotel: hotel
+    )
+  end
+end
 
