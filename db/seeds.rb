@@ -52,18 +52,18 @@ User.create(user_name: "joseph", email: "joseph@example.com", password_digest: "
 
 #create some reviews
 
-# get all the hotels
 hotels = Hotel.all
+users = User.all
+restaurants = Restaurant.all
 
 # create 20 random reviews for each hotel
 hotels.each do |hotel|
   20.times do
     Review.create(
-      title: Faker::Lorem.sentence(word_count: 3),
-      content: Faker::Lorem.paragraph(sentence_count: 3),
-      rating: rand(1..5),
-      hotel: hotel
+      user_id: users.pluck(:id).sample % 8,
+      hotel_id: hotel.id % 8,
+      restaurant_id: restaurants.pluck(:id).sample % 8,
+      comment: Faker::Lorem.paragraph(sentence_count: 3)
     )
   end
 end
-
