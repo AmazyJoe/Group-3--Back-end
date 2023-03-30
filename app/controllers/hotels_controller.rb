@@ -5,12 +5,12 @@ class HotelsController < ApplicationController
   def index
     @hotels = Hotel.all
 
-    render json: @hotels
+    render json: @hotels, include: [:reviews]
   end
 
   # GET /hotels/1
   def show
-    render json: @hotel
+    render json: @hotel, include: [:reviews]
   end
 
   # POST /hotels

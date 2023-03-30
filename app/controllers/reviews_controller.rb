@@ -4,9 +4,23 @@ class ReviewsController < ApplicationController
   # GET /reviews
   def index
     @reviews = Review.all
-
-    render json: @reviews
+    
+    render json: @reviews 
   end
+  
+
+
+# app/controllers/reviews_controller.rb
+
+  # def index
+  #   @restaurant = Restaurant.find(params[:restaurant_id])
+  #   @reviews = @restaurant.reviews
+  # end
+
+
+
+
+
 
   # GET /reviews/1
   def show
