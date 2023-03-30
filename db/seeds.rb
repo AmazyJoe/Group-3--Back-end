@@ -56,7 +56,7 @@ hotels = Hotel.all
 users = User.all
 restaurants = Restaurant.all
 
-# create 20 random reviews for each hotel
+# Create 20 random reviews for each hotel
 hotels.each do |hotel|
   20.times do
     Review.create(

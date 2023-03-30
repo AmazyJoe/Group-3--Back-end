@@ -7,7 +7,7 @@ ruby "2.7.1"
 gem "rails", "~> 7.0.4", ">= 7.0.4.3"
 
 # Use postgresql as the database for Active Record
-gem "pg", "~> 1.1"
+gem "sqlite3", "~> 1.4"
 
 gem 'rack-cors', require: 'rack/cors'
 
