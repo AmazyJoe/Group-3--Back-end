@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # Create some hotels
-Hotel.create(name: "Eka Hotel", location: "Nairobi~ MSA ROAD", description: "Luxurious hotel in the heart of the city", price_range: 50000, image_url: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fpix10.agoda.net%2FhotelImages%2F503084%2F-1%2F0a62cf8d3bead3938ff3b614f51cabe3.jpg%3Fca%3D7%26ce%3D1%26s%3D1024x768&tbnid=3Dzg16RbfpfnJM&vet=12ahUKEwiSxvne7YD-AhXDrycCHXM8AisQMygBegUIARDeAQ..i&imgrefurl=https%3A%2F%2Fwww.agoda.com%2Feka-hotel%2Fhotel%2Fnairobi-ke.html&docid=Jmb3tFrH0RlbDM&w=1024&h=660&q=eka%20hotel&ved=2ahUKEwiSxvne7YD-AhXDrycCHXM8AisQMygBegUIARDeAQ", rating: 5)
+Hotel.create(name: "Eka Hotel", location: "Nairobi~ MSA ROAD", description: "Luxurious hotel in the heart of the city", price_range: 50000, image_url: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.kuoni.co.uk%2Fkenya%2Fnairobi%2Fhotels%2Feka-hotel&psig=AOvVaw2EOFp8DvwGfH_8ktBCSVCL&ust=1680275646624000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCMjYqtz4g_4CFQAAAAAdAAAAABAD", rating: 5)
 
 Hotel.create(name: "Tafaria Hotel", location: "Nyeri", description: "Relaxing  resort with Mt.Kenya views", price_range: 40000, image_url: "https://www.tafaria.com/assets/img/Home%20Carousel3.jpg", rating: 4)
 
