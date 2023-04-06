@@ -1,26 +1,12 @@
 class ReviewsController < ApplicationController
-  before_action :set_review, only: %i[ show update destroy ]
+  before_action :set_review, only: [:show, :update, :destroy]
+  before_action :require_login, only: [:create, :update, :destroy]
 
   # GET /reviews
   def index
     @reviews = Review.all
-    
     render json: @reviews 
   end
-  
-
-
-# app/controllers/reviews_controller.rb
-
-  # def index
-  #   @restaurant = Restaurant.find(params[:restaurant_id])
-  #   @reviews = @restaurant.reviews
-  # end
-
-
-
-
-
 
   # GET /reviews/1
   def show
@@ -29,10 +15,10 @@ class ReviewsController < ApplicationController
 
   # POST /reviews
   def create
-    @review = Review.new(review_params)
+    @review = current_user.reviews.build(review_params)
 
     if @review.save
-      render json: @review, status: :created, location: @review
+      render json: @review, status: :created
     else
       render json: @review.errors, status: :unprocessable_entity
     end
@@ -59,8 +45,20 @@ class ReviewsController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through in order to create a review.
-  def review_params
-  params.require(:review).permit(:comment, :user_id, :hotel_id, :restaurant_id)
+    def review_params
+      params.require(:review).permit(:comment, :hotel_id, :restaurant_id)
+    end
+
+    # Check if user is logged in
+    def require_login
+      unless current_user
+        render json: { error: "Not authorized" }, status: :unauthorized
+      end
+    end
+
+    # Get the currently logged in user
+    def current_user
+      @current_user ||= User.find_by(id: session[:user_id])
+    end
 end
 
-end

@@ -71,11 +71,17 @@ GEM
       msgpack (~> 1.2)
     builder (3.2.4)
     concurrent-ruby (1.2.2)
+    cors (1.0.1)
+      multi_json
     crass (1.0.6)
     date (3.3.3)
     debug (1.7.2)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.12.0)
     faker (3.1.1)
       i18n (>= 1.8.11, < 2)
@@ -86,6 +92,7 @@ GEM
     io-console (0.6.0)
     irb (1.6.3)
       reline (>= 0.3.0)
+    jwt (2.7.0)
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -99,6 +106,7 @@ GEM
     mini_mime (1.1.2)
     minitest (5.18.0)
     msgpack (1.6.1)
+    multi_json (1.15.0)
     net-imap (0.3.4)
       date
       net-protocol
@@ -159,13 +167,17 @@ GEM
     zeitwerk (2.6.7)
 
 PLATFORMS
+  ruby
   x86_64-linux
 
 DEPENDENCIES
   bcrypt
   bootsnap
+  cors
   debug
+  dotenv-rails
   faker
+  jwt
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.4, >= 7.0.4.3)

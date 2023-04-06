@@ -1,18 +1,23 @@
 class SessionsController < ApplicationController
-     # Login
+ # skip_before_action :authenticate_user, only: [:create]
+
   def create
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      render json: user, status: :created
+      token = JsonWebToken.encode({ user_id: user.id })
+      render json: { token: token }
     else
-      render json: { error: "Invalid email or password" }, status: :unauthorized
+      render json: { error: 'Invalid email or password' }, status: :unauthorized
     end
   end
 
-  # Logout
   def destroy
-    session.delete :user_id
+    # Remove the user's token from the session
+    session.delete(:token)
     head :no_content
   end
 end
+
+
+
+

@@ -6,11 +6,17 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.3"
 
+
 # Use postgresql as the database for Active Record
 gem "sqlite3", "~> 1.4"
+# Gemfile
+gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'rack-cors', require: 'rack/cors'
+gem 'cors'
 
+
+gem 'jwt'
 
 gem "faker"
 
